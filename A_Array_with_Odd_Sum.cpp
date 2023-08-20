@@ -1,31 +1,32 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int t;
-    cin>>t;
-    while(t--){
+    cin >> t;
+
+    while (t--) {
         int n;
-        cin>>n;
-        int arr[100];
-        int sum=0;
-        int flag=0;
-        for(int i=0;i<n;i++){
-            cin>>arr[i];
-            sum+=arr[i];
-        if(sum%2!=0){
-            flag=1;
+        cin >> n;
+
+        int sum = 0;
+        int oddCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            int num;
+            cin >> num;
+            sum += num;
+            if (num % 2 != 0) {
+                oddCount++;
+            }
         }
-        else{
-            flag=0;
-        }
-        }
-        if(flag==1){
-            cout<<"YES"<<endl;
-        }
-        else{
-            cout<<"NO"<<endl;
+
+        if (sum % 2 != 0 || (oddCount > 0 && oddCount < n)) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
         }
     }
-return 0;
+
+    return 0;
 }
