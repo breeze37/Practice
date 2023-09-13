@@ -7,22 +7,28 @@ int main()
     cin >> n;
     int arr[n];
     int x;
-    cin >> x;
 
     unordered_set<int> st;
 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-        st.insert(arr[i]);
     }
+
+    cin >> x;
+
+
     for (int i = 0; i < n; i++)
     {
         int y = x - arr[i];
-        if (st.find(y) == st.end())
+        if (st.find(y) != st.end())
         {
+            // cout<<x<<ends;
             cout << "Yes" << endl;
+            return 0;
         }
+        st.insert(arr[i]);
     }
     cout<<"No"<<endl;
+
 }
